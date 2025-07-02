@@ -11,7 +11,7 @@ export default function Navbar() {
   const [lang, setLang] = useState('UZ');
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const isDarkNavbarPage = ['/properties', '/news'].some(path => pathname.startsWith(path));
+  const isDarkNavbarPage = ['/properties','/residences', '/news'].some(path => pathname.startsWith(path));
 
 
   useEffect(() => {
@@ -25,8 +25,6 @@ export default function Navbar() {
     { name: 'Ko‘chmas mulk', href: '/properties' },
     { name: 'Yangiliklar', href: '/news' },
     { name: 'Turar joy majmuiyi', href: '/residences' },
-    { name: 'Galereya', href: '/gallery' },
-    { name: '360 tur', href: '/360-tour' },
   ];
 
   const baseClass = `
@@ -72,12 +70,26 @@ export default function Navbar() {
         </div>
 
         {/* Logotip */}
-        <div className="text-xl font-bold tracking-wider">BM GROUP</div>
+        <Link href="/">
+  <div className="flex items-center gap-2 cursor-pointer">
+  <img
+    src="/bm_logo.png"
+    alt="BM GROUP logo"
+    className="h-10 w-auto object-contain"
+  />
+  <span className={`pt-5 text-1xl font-semibold tracking-wide transition-colors duration-300 ${
+        scrolled ? 'text-black' : 'text-white'
+      }`}>
+    BM GROUP
+  </span>
+</div>
+
+</Link>
 
         {/* Telefon */}
         <div className="flex items-center gap-2">
-          <div className="bg-gray-200 p-2 rounded-full">
-            <FiPhoneCall className={`${scrolled ? 'text-black' : 'text-white'} text-base`} />
+          <div className="bg-black p-2 rounded-full">
+            <FiPhoneCall className={`${scrolled ? 'text-white  ': 'text-white'} text-base`} />
           </div>
           <a href="tel:+998785550077" className="hover:underline text-sm font-medium">
             +998 78 555 00 77

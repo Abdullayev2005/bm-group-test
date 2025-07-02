@@ -26,10 +26,8 @@ export default function Footer() {
           <div className="mt-6">
             <h3 className="text-lg font-semibold mb-2 text-yellow-400">Bizni kuzating</h3>
             <div className="flex gap-4 text-xl">
-              <a href="#"><FaTelegramPlane className="hover:text-yellow-400 transition" /></a>
-              <a href="#"><FaYoutube className="hover:text-yellow-400 transition" /></a>
-              <a href="#"><FaInstagram className="hover:text-yellow-400 transition" /></a>
-              <a href="#"><FaFacebookF className="hover:text-yellow-400 transition" /></a>
+              <a href="https://t.me/bmgroupuzbekistan"><FaTelegramPlane className="hover:text-yellow-400 transition" /></a>
+              <a href="https://www.instagram.com/bmgroup_uz?igsh=NG5tNnhjcWdiOHU%3D&utm_source=qr"><FaInstagram className="hover:text-yellow-400 transition" /></a>
             </div>
           </div>
         </div>

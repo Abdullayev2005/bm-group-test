@@ -3,7 +3,9 @@ import Image from 'next/image'
 import { FiUsers, FiGrid, FiLayers } from 'react-icons/fi'
 
 export default function AboutInfoSection() {
-  const imageSrc = '/images/charx.jpg'
+  const imageSrc = '/about_image/info1.jpg';
+  const imageSrc2 = '/about_image/info2.jpg';
+  const imageSrc3 = '/about_image/info3.png'
 
   return (
     <section className="max-w-7xl max-h-150 mx-auto px-6 py-12 space-y-4">
@@ -33,7 +35,7 @@ export default function AboutInfoSection() {
           {/* Bosh rasm: ikki qatorda baland */}
           <div className="row-span-2 w-[240px] h-[180px]">
             <Image
-              src={imageSrc}
+              src={imageSrc2}
               alt="Charx"
               width={400}
               height={1200}
@@ -43,7 +45,7 @@ export default function AboutInfoSection() {
           {/* Yuqori-o‘ng rasm */}
           <div className="w-[250px] h-[370px]">
             <Image
-              src={imageSrc}
+              src={imageSrc3}
               alt="Charx"
               width={280}
               height={180}

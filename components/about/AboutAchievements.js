@@ -6,19 +6,19 @@ import { useEffect, useState, useRef } from 'react';
 
 const cardData = [
   {
-    img: '/images/charx.jpg',
+    img: '/about_image/yutuq1.png',
     title: 'Kompaniya yutuqlari',
     text: `BM GROUP, nafaqat mintaqada balki O‘zbekiston ko‘chmas mulk bozorida
       o‘zining nufuzli mavqeini saqlab qolishga, balki asosiy novator bo‘lishga ham intiladi.`
   },
   {
-    img: '/images/charx.jpg',
+    img: '/about_image/yutuq2.jpg',
     title: 'Innovatsion yondashuv',
     text: `Yangi texnologiyalarni joriy etish orqali BM GROUP qurilish sifati va samaradorligini
       doimiy ravishda oshirishga intiladi.`
   },
   {
-    img: '/images/charx.jpg',
+    img: '/about_image/yutuq3.jpg',
     title: 'Barqaror rivojlanish',
     text: `Kompaniya ekologik standartlarga rioya qilgan holda, barqarorlik va ijtimoiy mas’uliyatni
       o‘z faoliyatining asosiy tamoyili sifatida ko‘radi.`

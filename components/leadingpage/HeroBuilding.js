@@ -51,7 +51,7 @@ export default function HeroBuilding() {
             className="object-contain z-10 relative mix-blend-multiply group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.8)]"
           />
           <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 text-white text-xs bg-blue-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {name} haqida ma'lumot
+            {name} haqida malumot
           </div>
         </div>
       ))}
@@ -68,7 +68,7 @@ export default function HeroBuilding() {
             </button>
           </div>
           <p className="mt-2 text-gray-700">
-            Bu yerda {buildings.find(b => b.id === activeBuilding)?.name} haqida batafsil ma'lumot bo'ladi.
+            Bu yerda {buildings.find(b => b.id === activeBuilding)?.name} haqida batafsil malumot boladi.
           </p>
           <div className="mt-4 relative w-full h-[600px] bg-gray-100 rounded shadow-inner overflow-hidden">
             <Image
@@ -101,7 +101,7 @@ export default function HeroBuilding() {
                 {doors.find(d => d.id === activeDoor)?.name}
               </h3>
               <p className="text-sm text-blue-700 mt-1">
-                Bu yerda {doors.find(d => d.id === activeDoor)?.name}ga oid batafsil ma'lumot va uy chizmasi bo'ladi.
+                Bu yerda {doors.find(d => d.id === activeDoor)?.name}ga oid batafsil malumot va uy chizmasi boladi.
               </p>
             </div>
           )}

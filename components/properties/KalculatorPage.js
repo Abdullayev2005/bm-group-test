@@ -16,7 +16,7 @@ export default function KalculatorPage() {
 
   return (
     <section className="pt-40 max-w-7xl mx-auto px-6 py-12">
-      <h2 className="text-3xl font-bold text-[#1E2A64] mb-6">Ko'chmas mulk</h2>
+      <h2 className="text-3xl font-bold text-[#1E2A64] mb-6">Kochmas mulk</h2>
 
       <div className="p-6 space-y-4">
         <div className="flex flex-wrap items-end justify-between gap-4">

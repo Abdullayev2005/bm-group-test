@@ -72,11 +72,13 @@ export default function Navbar() {
         {/* Logotip */}
         <Link href="/">
   <div className="flex items-center gap-2 cursor-pointer">
-  <img
-    src="/bm_logo.png"
-    alt="BM GROUP logo"
-    className="h-10 w-auto object-contain"
-  />
+  <Image
+  src="/bm_logo.png"
+  alt="BM GROUP logo"
+  width={100} // kerakli kenglik
+  height={40} // kerakli balandlik
+  className="h-10 w-auto object-contain"
+/>
   <span className={`pt-5 text-1xl font-semibold tracking-wide transition-colors duration-300 ${
         scrolled ? 'text-black' : 'text-white'
       }`}>

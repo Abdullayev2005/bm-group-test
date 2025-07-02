@@ -1,4 +1,3 @@
-// components/leadingpage/MapSection.js
 'use client';
 
 import { useEffect } from 'react';
@@ -14,117 +13,31 @@ export default function MapSection() {
 
   const initMap = () => {
     window.ymaps.ready(() => {
-      window.ymaps.ready(() => {
-  const map = new window.ymaps.Map('map', {
-    center: [41.285842, 69.276384], // bu shunchaki boshlanishi, keyin bounds bilan yangilanadi
-    zoom: 11,
-    controls: []
-  });
-
-  // 👉 Hamma markerlar qo‘shiladi
-  locations.forEach((loc) => {
-    const placemark = new ymaps.Placemark(loc.coords, {
-      hintContent: loc.hint
-    }, {
-      iconLayout: loc.layout,
-      iconShape: {
-        type: 'Circle',
-        coordinates: [50, 50],
-        radius: 50
-      }
-    });
-    placemark.events.add('click', () => window.open(loc.url, '_blank'));
-    map.geoObjects.add(placemark);
-  });
-
-  // 👉 Barcha nuqtalar ko‘rinadigan qilib zoom va bounds avtomatik
-  const bounds = ymaps.util.bounds.fromPoints(locations.map(loc => loc.coords));
-  map.setBounds(bounds, {
-    checkZoomRange: true,
-    zoomMargin: 40 // chetidan joy qoldiradi
-  });
-});
-
-
+      // 💡 Avval layoutlar va locations e'lon qilinadi
       const style = document.createElement("style");
       style.innerHTML = `
         @keyframes pulse {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: scale(1.8);
-            opacity: 0;
-          }
+          0% { transform: scale(1); opacity: 1; }
+          100% { transform: scale(1.8); opacity: 0; }
         }
       `;
       document.head.appendChild(style);
 
-    const customMainOfficeLayout = ymaps.templateLayoutFactory.createClass(`
-  <div style="position: relative; width: 200px; height: 200px;">
-    
-    <!-- Pulse animatsion qatlam -->
-    <div style="
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background-color: rgba(0, 113, 188, 0.2);
-      border: 6px solid rgba(0, 113, 188, 0.4);
-      animation: pulse 2s infinite;
-    "></div>
+      const customMainOfficeLayout = window.ymaps.templateLayoutFactory.createClass(`
+        <div style="position: relative; width: 200px; height: 200px;">
+          <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; background-color: rgba(0, 113, 188, 0.2); border: 6px solid rgba(0, 113, 188, 0.4); animation: pulse 2s infinite;"></div>
+          <div style="position: absolute; width: 100px; height: 100px; top: 50px; left: 50px; border-radius: 50%; background-color: rgba(0, 113, 188, 0.8);"></div>
+          <img src="/images/bm-logo.png" style="width: 60px; height: 60px; position: absolute; top: 70px; left: 70px; object-fit: contain;" />
+        </div>
+      `);
 
-    <!-- Kichik doira orqa fon (logo ostida) -->
-    <div style="
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      top: 50px;
-      left: 50px;
-      border-radius: 50%;
-      background-color: rgba(0, 113, 188, 0.8);
-    "></div>
-
-    <!-- Logotip -->
-    <img src="/images/bm-logo.png"
-         style="width: 60px; height: 60px; position: absolute; top: 70px; left: 70px; object-fit: contain;" />
-  </div>
-`);
-
-
-
-      const yellowLayout = ymaps.templateLayoutFactory.createClass(`
-  <div style="position: relative; width: 200px; height: 200px;">
-    
-    <!-- Pulse animatsion qatlam -->
-    <div style="
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background-color: rgba(0, 113, 188, 0.2);
-      border: 6px solid rgba(0, 113, 188, 0.4);
-      animation: pulse 2s infinite;
-    "></div>
-
-    <!-- Kichik doira orqa fon (logo ostida) -->
-    <div style="
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      top: 50px;
-      left: 50px;
-      border-radius: 50%;
-      background-color: rgba(0, 113, 188, 0.8);
-    "></div>
-
-    <!-- Logotip -->
-    <img src="/images/bm-logo.png"
-         style="width: 60px; height: 60px; position: absolute; top: 70px; left: 70px; object-fit: contain;" />
-  </div>
-`);
-
+      const yellowLayout = window.ymaps.templateLayoutFactory.createClass(`
+        <div style="position: relative; width: 200px; height: 200px;">
+          <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; background-color: rgba(0, 113, 188, 0.2); border: 6px solid rgba(0, 113, 188, 0.4); animation: pulse 2s infinite;"></div>
+          <div style="position: absolute; width: 100px; height: 100px; top: 50px; left: 50px; border-radius: 50%; background-color: rgba(0, 113, 188, 0.8);"></div>
+          <img src="/images/bm-logo.png" style="width: 60px; height: 60px; position: absolute; top: 70px; left: 70px; object-fit: contain;" />
+        </div>
+      `);
 
       const locations = [
         {
@@ -153,8 +66,16 @@ export default function MapSection() {
         }
       ];
 
+      // 💡 endi mapni yaratamiz
+      const map = new window.ymaps.Map('map', {
+        center: [41.285842, 69.276384],
+        zoom: 11,
+        controls: []
+      });
+
+      // 💡 markerlar qo‘shiladi
       locations.forEach((loc) => {
-        const placemark = new ymaps.Placemark(loc.coords, {
+        const placemark = new window.ymaps.Placemark(loc.coords, {
           hintContent: loc.hint
         }, {
           iconLayout: loc.layout,
@@ -164,12 +85,20 @@ export default function MapSection() {
             radius: 100
           }
         });
+
         placemark.events.add('click', () => window.open(loc.url, '_blank'));
         map.geoObjects.add(placemark);
       });
+
+      // avtomatik zoom qilish
+      const bounds = window.ymaps.util.bounds.fromPoints(locations.map(loc => loc.coords));
+      map.setBounds(bounds, {
+        checkZoomRange: true,
+        zoomMargin: 40
+      });
     });
   };
-  
+
   return (
     <div className="w-full h-[650px]">
       <div id="map" className="w-full h-full rounded-lg shadow" />

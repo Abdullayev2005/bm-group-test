@@ -7,19 +7,13 @@ import clsx from 'clsx'; // animatsiya uchun kerak bo‘ladi (yoki shunchaki cla
 
 const slides = [
   {
-    title: 'Charx Novza',
-    subtitle: 'Samarqand Darvoza, Shayxontohur tumani',
-    image: '/images/charx.jpg',
+    image: '/images/Frame 34576.png',
   },
   {
-    title: 'Yangi qo‘shnilar',
-    subtitle: 'Yangi Choshtepa, Sergeli tumani',
-    image: '/images/charx.jpg',
+    image: '/images/Frame 34577.png',
   },
   {
-    title: 'Dombrobod filiali',
-    subtitle: 'Chilonzor tumani',
-    image: '/images/charx.jpg',
+    image: '/images/Frame 34575.png',
   },
 ];
 

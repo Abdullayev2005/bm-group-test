@@ -3,6 +3,14 @@
 import { useState } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import propertiesData from '@/app/data/properties';
+import {
+  TbCalendarEvent,
+  TbBuildingSkyscraper,
+  TbRulerMeasure,
+} from 'react-icons/tb';
 
 export default function KalculatorPage() {
   const [area, setArea] = useState([0, 500]);
@@ -14,9 +22,28 @@ export default function KalculatorPage() {
   const rooms = [1, 2, 3];
   const years = [2025, 2026];
 
+ const filteredProperties = propertiesData.filter((property) => {
+  const totalPrice = parseInt(property.price.replace(/\s/g, '').replace('UZS', '')) / 1_000_000;
+  const areaValue = parseFloat(property.size.match(/\d+(\.\d+)?/)[0]);
+  const floorValue = parseInt(property.floors.split('/')[0]);
+  const yearValue = parseInt(property.date.split('/')[1]);
+  const roomCount = parseInt(property.title.match(/\d+/)[0]);
+
+  return (
+    roomCount === activeRoom &&
+    areaValue >= area[0] && areaValue <= area[1] &&
+    totalPrice >= price[0] && totalPrice <= price[1] &&
+    floorValue >= floor[0] && floorValue <= floor[1] &&
+    yearValue === selectedYear
+  );
+});
+
+
+
+
   return (
     <section className="pt-40 max-w-7xl mx-auto px-6 py-12">
-      <h2 className="text-3xl font-bold text-[#1E2A64] mb-6">Kochmas mulk</h2>
+      <h2 className="text-3xl font-bold text-[#1E2A64] mb-6">Ko'chmas mulk</h2>
 
       <div className="p-6 space-y-4">
         <div className="flex flex-wrap items-end justify-between gap-4">
@@ -136,19 +163,58 @@ export default function KalculatorPage() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 mt-6">
-          <span className="bg-white border border-gray-300 text-[#1E2A64] rounded-full px-4 py-1 text-sm">{activeRoom}-xonali ×</span>
-          <span className="bg-white border border-gray-300 text-[#1E2A64] rounded-full px-4 py-1 text-sm">{area[0]}–{area[1]} m² ×</span>
-          <span className="bg-white border border-gray-300 text-[#1E2A64] rounded-full px-4 py-1 text-sm">{price[0]} - {price[1]} mln UZS ×</span>
-          <span className="bg-white border border-gray-300 text-[#1E2A64] rounded-full px-4 py-1 text-sm">{floor[0]} – {floor[1]} qavat ×</span>
-          <span className="bg-white border border-gray-300 text-[#1E2A64] rounded-full px-4 py-1 text-sm">{years.join('–')} ×</span>
-        </div>
+        {/* Filtrlangan obyektlar (PropertiesGrid) */}
+        <section className="max-w-7xl mx-auto px-0 pt-12">
+          <h2 className="text-xl font-semibold text-[#1E2A64] mb-4">Sizga moslari</h2>
 
-        <div className="flex justify-end mt-6">
-          <button className="border border-gray-300 px-4 py-2 rounded-full text-sm text-[#1E2A64] flex items-center gap-2">
-            Filtrni tozalash <span className="text-lg">×</span>
-          </button>
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filteredProperties.map((item, idx) => (
+              <Link
+                key={idx}
+                href={item.link}
+                className="border border-[#CBD5E1] rounded-lg overflow-hidden hover:shadow-md transition"
+              >
+                <div className="h-48 relative">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
+                <div className="p-4 border-t border-[#CBD5E1]">
+                  <h3 className="text-[#1E2A64] text-base font-medium mb-1">{item.title}</h3>
+                  <p className="text-[#1E2A64] text-sm font-semibold mb-3">{item.price}</p>
+
+                  <div className="flex flex-wrap text-xs text-[#1E2A64] gap-x-3 gap-y-1">
+                    <div className="flex items-center gap-1">
+                      <TbCalendarEvent className="text-[#1E2A64]" />
+                      {item.date}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <TbBuildingSkyscraper className="text-[#1E2A64]" />
+                      {item.floors}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <TbRulerMeasure className="text-[#1E2A64]" />
+                      {item.size}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {filteredProperties.length === 0 && (
+            <p className="text-center text-[#1E2A64] col-span-full mt-6">Hech qanday obyekt topilmadi</p>
+          )}
+
+          <div className="flex justify-center mt-6">
+            <button className="text-[#1E2A64] text-sm border-b border-[#1E2A64] pb-0.5">
+              Yana variantlarni ko‘rsatish
+            </button>
+          </div>
+        </section>
       </div>
     </section>
   );

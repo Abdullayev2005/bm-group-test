@@ -45,7 +45,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 <script>
-  function createTextBlock(hotSpotDiv, fullText, targetUrl) {
+  function createTextBlock(hotSpotDiv, fullText) {
     const wrapper = document.createElement("div");
     wrapper.style.background = "#005bbb";
     wrapper.style.color = "#fff";
@@ -66,7 +66,7 @@
     button.innerText = "Asosiy zalga oʻtish";
     button.className = "custom-link-button";
     button.onclick = function () {
-      window.location.href = targetUrl;
+      window.location.href = "https://6865509046f23f235e588d13--bm-grouptest.netlify.app/residences";
     };
     wrapper.appendChild(button);
 

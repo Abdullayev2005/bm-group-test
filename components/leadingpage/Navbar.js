@@ -11,7 +11,7 @@ export default function Navbar() {
   const [lang, setLang] = useState('UZ');
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const isDarkNavbarPage = ['/properties','/residences', '/news'].some(path => pathname.startsWith(path));
+  const isDarkNavbarPage = ['/properties','/residences', '/property-detail', '/news'].some(path => pathname.startsWith(path));
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -64,11 +64,11 @@ export default function Navbar() {
               height={40}
               className="h-10 w-auto object-contain"
             />
-            <span className={`pt-5 text-1xl font-semibold tracking-wide transition-colors duration-300 ${
-              scrolled ? 'text-black' : 'text-white'
-            }`}>
-              BM GROUP
-            </span>
+            <span className={`pt-5 text-1xl font-semibold tracking-wide ${
+  scrolled ? 'text-black' : 'text-white'|| isDarkNavbarPage ? 'text-white' : 'text-black'
+}`}>
+  BM GROUP
+</span>
           </div>
         </Link>
 

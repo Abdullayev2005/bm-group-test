@@ -25,7 +25,7 @@ export default function ResidencePage() {
   ];
 
   return (
-    <div className="w-full  bg-white text-blue-950">
+    <div className="pt-10 w-full  bg-white text-blue-950">
       {/* Header with title and images */}
       <section className="px-20 pt-24 pb-10">
         <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Charx Novza</h1>

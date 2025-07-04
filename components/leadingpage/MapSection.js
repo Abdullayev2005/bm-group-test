@@ -13,7 +13,6 @@ export default function MapSection() {
 
   const initMap = () => {
     window.ymaps.ready(() => {
-      // 💡 Avval layoutlar va locations e'lon qilinadi
       const style = document.createElement("style");
       style.innerHTML = `
         @keyframes pulse {
@@ -31,13 +30,7 @@ export default function MapSection() {
         </div>
       `);
 
-      const yellowLayout = window.ymaps.templateLayoutFactory.createClass(`
-        <div style="position: relative; width: 200px; height: 200px;">
-          <div style="position: absolute; width: 200px; height: 200px; border-radius: 50%; background-color: rgba(0, 113, 188, 0.2); border: 6px solid rgba(0, 113, 188, 0.4); animation: pulse 2s infinite;"></div>
-          <div style="position: absolute; width: 100px; height: 100px; top: 50px; left: 50px; border-radius: 50%; background-color: rgba(0, 113, 188, 0.8);"></div>
-          <img src="/images/bm-logo.png" style="width: 60px; height: 60px; position: absolute; top: 70px; left: 70px; object-fit: contain;" />
-        </div>
-      `);
+      const yellowLayout = customMainOfficeLayout;
 
       const locations = [
         {
@@ -66,14 +59,12 @@ export default function MapSection() {
         }
       ];
 
-      // 💡 endi mapni yaratamiz
       const map = new window.ymaps.Map('map', {
         center: [41.285842, 69.276384],
         zoom: 11,
         controls: []
       });
 
-      // 💡 markerlar qo‘shiladi
       locations.forEach((loc) => {
         const placemark = new window.ymaps.Placemark(loc.coords, {
           hintContent: loc.hint
@@ -83,18 +74,25 @@ export default function MapSection() {
             type: 'Circle',
             coordinates: [100, 100],
             radius: 100
-          }
+          },
+          iconOffset: [-100, -100] // markerni markazlashtirish
         });
 
         placemark.events.add('click', () => window.open(loc.url, '_blank'));
         map.geoObjects.add(placemark);
       });
 
-      // avtomatik zoom qilish
       const bounds = window.ymaps.util.bounds.fromPoints(locations.map(loc => loc.coords));
       map.setBounds(bounds, {
         checkZoomRange: true,
         zoomMargin: 40
+      });
+
+      // Zoom darajasini cheklash
+      map.events.add('boundschange', () => {
+        if (map.getZoom() > 17) {
+          map.setZoom(17);
+        }
       });
     });
   };

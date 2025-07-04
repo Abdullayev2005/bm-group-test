@@ -65,7 +65,7 @@ export default function Navbar() {
               className="h-10 w-auto object-contain"
             />
             <span className={`pt-5 text-1xl font-semibold tracking-wide ${
-  scrolled ? 'text-black' : 'text-white'|| isDarkNavbarPage ? 'text-white' : 'text-black'
+  scrolled ? 'text-black' : 'text-white'
 }`}>
   BM GROUP
 </span>

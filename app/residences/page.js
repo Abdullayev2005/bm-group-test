@@ -34,10 +34,10 @@ export default function ResidencePage() {
         </p>
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           <div className="relative w-96 h-[600px]">
-            <Image src="/residences/bino-right.png" alt="Bino" fill className="object-cover rounded-xl" />
+            <Image src="/residences/charx_novza/bino-right.png" alt="Bino" fill className="object-cover rounded-xl" />
           </div>
           <div className="relative pt-10 w-96 h-[600px] flex-none">
-            <Image src="/residences/bino-left.png" alt="Bino" fill className="object-cover rounded-xl" />
+            <Image src="/residences/charx_novza/bino-left.png" alt="Bino" fill className="object-cover rounded-xl" />
           </div>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function ResidencePage() {
         </div>
         <div className="flex gap-6 mt-12">
           <div className="relative w-[484px] h-[484px]">
-            <Image src="/residences/Rectangle 64.png" alt="Bino bottom" fill className="object-cover rounded-xl" />
+            <Image src="/residences/charx_novza/Rectangle 64.png" alt="Bino bottom" fill className="object-cover rounded-xl" />
           </div>  
         </div>
       </section>
@@ -70,10 +70,10 @@ export default function ResidencePage() {
         </div>
         <div className="flex flex-col gap-7 w-[620px]">
           <div className="relative h-80 w-full">
-            <Image src="/residences/2.png" alt="Gallery Top" fill className="object-cover rounded-xl" />
+            <Image src="/residences/charx_novza/2.png" alt="Gallery Top" fill className="object-cover rounded-xl" />
           </div>
           <div className="relative h-80 w-full">
-            <Image src="/residences/3.png" alt="Gallery Bottom" fill className="object-cover rounded-xl" />
+            <Image src="/residences/charx_novza/3.png" alt="Gallery Bottom" fill className="object-cover rounded-xl" />
           </div>
         </div>
       </section>

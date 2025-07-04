@@ -2,7 +2,7 @@ const dummyNews = [
   {
     id: 1,
     title: `99 milin bosh to'lov keyin oyiga 4.9 mlndan`,
-    img: '/news_image/birinchi.jpg',
+    img: '/news_image/birinchi.png',
     desc: `Ideal xonadoningizni tanlang! Siz farovon hayot uchun qulay va keng uy qidiryapsizmi? 
 Biz har qanday oilaning ehtiyojlarini inobatga olgan holda xonadon variantlarini yaratdik. 
 Bizning majmuamizda yosh oilalardan to katta va do'stona oilalargacha — barcha orzudagi uyni topishi mumkin. 

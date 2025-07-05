@@ -26,7 +26,7 @@ export default function SergeliPage() {
     <div className="pt-10 w-full bg-white text-blue-950">
       {/* Header */}
       <section className="px-20 pt-24 pb-10">
-        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Sergeli</h1>
+        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Yangi qo‘shnilar</h1>
         <p className="w-96 mt-4 text-lg text-neutral-900 font-['Chocolate_Classical_Sans']">
           Yangi Shoshtepa, Jun Ariq ko‘chasida joylashgan 12–16 qavatli, 1000 ta xonadondan iborat yangi shaharcha.
           Birinchi qavat — tijorat maydonlari, yuqori qavatlarda esa pentxaus terraslar. 

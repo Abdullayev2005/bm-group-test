@@ -26,7 +26,7 @@ export default function DombirobodPage() {
     <div className="pt-10 w-full bg-white text-blue-950">
       {/* Header */}
       <section className="px-20 pt-24 pb-10">
-        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Dombirobod</h1>
+        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Do‘mbirobot Residence</h1>
         <p className="w-96 mt-4 text-lg text-neutral-900 font-['Chocolate_Classical_Sans']">
           Chilonzor tumanining Tersakabad ko‘chasida joylashgan 16 qavatli zamonaviy majmua, 1000 dan ortiq xonadonni o‘z ichiga oladi.
           Birinchi qavat – tijorat maydonlari. Hovlida bolalar o‘yingohi, sport maydonchalari, trenajyorlar va avtoturargohlar mavjud.

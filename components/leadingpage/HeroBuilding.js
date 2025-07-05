@@ -15,6 +15,10 @@ const buildings = [
 const doors = [
   { id: 1, name: 'Eshik 1', img: '/buil_image/eshik 1.png', top: '46%', left: '16.5%', width: 430, height: 1100 },
   { id: 2, name: 'Eshik 2', img: '/buil_image/eshik 2.png', top: '83%', left: '34.5%', width: 280, height: 850 },
+  { id: 3, name: 'Eshik 3', img: '/buil_image/eshik 3.png', top: '70%', left: '39%', width: 190, height: 800 },
+  { id: 4, name: 'Eshik 4', img: '/buil_image/eshik 4.png', top: '63.5%', left: '47%', width: 225, height: 1050 },
+  { id: 5, name: 'Eshik 5', img: '/buil_image/eshik 5.png', top: '74%', left: '61%', width: 250, height: 1100 },
+  { id: 6, name: 'Eshik 6', img: '/buil_image/eshik 6.png', top: '81.5%', left: '59.8%', width: 280, height: 850 },
 ];
 
 export default function HeroBuilding() {

@@ -33,9 +33,9 @@ const navItems = [
     name: 'Turar joy majmuiyi',
     subItems: [
       { name: 'Charx Novza', href: '/residences/charx', icon: '🏢' },
-      { name: 'Dombrovot', href: '/residences/dombrovot', icon: '🏘️' },
-      { name: 'Qo‘yliq', href: '/residences/qoyliq', icon: '🏙️' },
-      { name: 'Sergeli', href: '/residences/sergeli', icon: '🏙️' }
+      { name: 'Do‘mbirobot Residence', href: '/residences/dombrovot', icon: '🏘️' },
+      { name: 'Mirobot', href: '/residences/qoyliq', icon: '🏙️' },
+      { name: 'Yangi qo‘shnilar', href: '/residences/sergeli', icon: '🏙️' }
     ]
   }
 ];

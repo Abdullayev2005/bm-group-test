@@ -1,5 +1,3 @@
-// pages/residence.js (yoki app/residences/page.jsx)
-
 'use client';
 
 import Image from 'next/image';
@@ -8,7 +6,7 @@ import {
   FaUserFriends, FaDumbbell, FaClinicMedical, FaParking, FaShoppingCart, FaMosque
 } from 'react-icons/fa';
 
-export default function ResidencePage() {
+export default function SergeliPage() {
   const services = [
     { icon: <FaVideo />, label: '24/7 kuzatuv' },
     { icon: <FaShieldAlt />, label: '24 soat xavfsizlik' },
@@ -25,19 +23,21 @@ export default function ResidencePage() {
   ];
 
   return (
-    <div className="pt-10 w-full  bg-white text-blue-950">
-      {/* Header with title and images */}
+    <div className="pt-10 w-full bg-white text-blue-950">
+      {/* Header */}
       <section className="px-20 pt-24 pb-10">
-        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Charx Novza</h1>
+        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Sergeli</h1>
         <p className="w-96 mt-4 text-lg text-neutral-900 font-['Chocolate_Classical_Sans']">
-          Shayxontohur tumanidagi Samarqand Darvoza ko‘chasida joylashgan 12 qavatli, 5 blokli, 438 xonadondan iborat zamonaviy turar joy majmuasi. Arxitekturasi Fransuz uslubi, travertin va ottocento fasad bezagi bilan ajralib turadi.
+          Yangi Shoshtepa, Jun Ariq ko‘chasida joylashgan 12–16 qavatli, 1000 ta xonadondan iborat yangi shaharcha.
+          Birinchi qavat — tijorat maydonlari, yuqori qavatlarda esa pentxaus terraslar. 
+          Hovlida bolalar maydonchasi, sport zonalari, trenajyorlar va avtoturargohlar mavjud.
         </p>
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           <div className="relative w-96 h-[600px]">
-            <Image src="/residences/charx_novza/bino-right.png" alt="Bino" fill className="object-cover rounded-xl" />
+            <Image src="/residences/sergeli/1.png" alt="Sergeli bino" fill className="object-cover rounded-xl" />
           </div>
           <div className="relative pt-10 w-96 h-[600px] flex-none">
-            <Image src="/residences/charx_novza/bino-left.png" alt="Bino" fill className="object-cover rounded-xl" />
+            <Image src="/residences/sergeli/2.png" alt="Sergeli bino" fill className="object-cover rounded-xl" />
           </div>
         </div>
       </section>
@@ -55,25 +55,26 @@ export default function ResidencePage() {
             </div>
           ))}
         </div>
+
         <div className="flex gap-6 mt-12">
           <div className="relative w-[484px] h-[484px]">
-            <Image src="/residences/charx_novza/Rectangle 64.png" alt="Bino bottom" fill className="object-cover rounded-xl" />
-          </div>  
+            <Image src="/residences/sergeli/3.png" alt="Sergeli pastgi bino" fill className="object-cover rounded-xl" />
+          </div>
         </div>
       </section>
 
-      {/* Gallery section */}
+      {/* Gallery */}
       <section className="px-20 py-10 flex gap-7">
         <div className="relative w-[640px] h-[728px]">
-          <Image src="/residences/1.png" alt="Gallery Left" fill className="object-cover rounded-xl" />
+          <Image src="/residences/sergeli/4.png" alt="Sergeli gallery left" fill className="object-cover rounded-xl" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-900/10 to-zinc-900/80" />
         </div>
         <div className="flex flex-col gap-7 w-[620px]">
           <div className="relative h-80 w-full">
-            <Image src="/residences/charx_novza/2.png" alt="Gallery Top" fill className="object-cover rounded-xl" />
+            <Image src="/residences/sergeli/5.png" alt="Sergeli gallery top" fill className="object-cover rounded-xl" />
           </div>
           <div className="relative h-80 w-full">
-            <Image src="/residences/charx_novza/3.png" alt="Gallery Bottom" fill className="object-cover rounded-xl" />
+            <Image src="/residences/sergeli/5.png" alt="Sergeli gallery bottom" fill className="object-cover rounded-xl" />
           </div>
         </div>
       </section>

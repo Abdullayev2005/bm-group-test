@@ -172,9 +172,9 @@ export default function KalculatorPage() {
               <Link
                 key={idx}
                 href={item.link}
-                className="border border-[#CBD5E1] rounded-lg overflow-hidden hover:shadow-md transition"
+                className="border bg-white border-[#CBD5E1] rounded-lg overflow-hidden hover:shadow-md transition"
               >
-                <div className="h-48 relative">
+                <div className=" h-48 relative">
                   <Image
                     src={item.img}
                     alt={item.title}

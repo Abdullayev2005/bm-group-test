@@ -34,27 +34,27 @@ export default function MapSection() {
 
       const locations = [
         {
-          coords: [41.304193, 69.215176],
-          hint: 'BM Group asosiy ofis (Tirsakobod)',
-          url: 'https://yandex.uz/maps/-/CDqQZFHq',
+          coords: [41.252880, 69.204118],
+          hint: `Do'mbirobot Residence`,
+          url: 'https://yandex.uz/maps/-/CHs156MH',
           layout: customMainOfficeLayout,
         },
         {
-          coords: [41.236542, 69.324582],
-          hint: 'CharxNovza filiali',
-          url: 'https://yandex.uz/maps/-/CDqQZHBz',
+          coords: [41.304192, 69.215178],
+          hint: 'CharxNovza BM Group asosiy ofis',
+          url: 'https://yandex.uz/maps/-/CHs15SKL',
           layout: yellowLayout,
         },
         {
-          coords: [41.255835, 69.240313],
-          hint: 'Junarik filiali',
-          url: 'https://yandex.uz/maps/-/CDqQZH8d',
+          coords: [41.239539, 69.196732],
+          hint: `Sergeli Tumani Yangi qo'shnilar`,
+          url: 'https://yandex.uz/maps/-/CHs1VVKY',
           layout: yellowLayout,
         },
         {
-          coords: [41.285842, 69.276384],
-          hint: 'Ziyonur filiali',
-          url: 'https://yandex.uz/maps/-/CDqQZHQn',
+          coords: [41.244654, 69.312395],
+          hint: 'Mirobod',
+          url: 'https://yandex.uz/maps/-/CHs152Mh',
           layout: yellowLayout,
         }
       ];

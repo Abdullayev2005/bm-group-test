@@ -8,7 +8,7 @@ const propertiesData = [
     floors: '3/14',
     size: '61.2 m²',
     img: '/properties/Hona_1.png',
-    gallery: ['/properties/floor1.png', '/properties/floor2.png', '/properties/floor3.png'],
+    gallery: ['/properties/Hona_1.png', '/properties/floor2.png', '/properties/floor3.png'],
     link: '/property-detail/1',
     rooms: [
       { name: 'Dahliz', size: '3.7 m²' },

@@ -28,10 +28,11 @@ export default function QoyliqPage() {
     <div className="pt-10 w-full bg-white text-blue-950">
       {/* Header */}
       <section className="px-20 pt-24 pb-10">
-        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Mirobot</h1>
-        <p className="w-96 mt-4 text-lg text-neutral-900 font-['Chocolate_Classical_Sans']">
-          Go‘zal poytaxtimiz Shayxontohur tumanida, Samarqand Darvoza ko‘chasida joylashgan “Qoyliq” — bu zamonaviy arxitektura va fransuz uslubidagi dizayn uyg‘unligi. 
-          12 qavatli, 5 blokli va 438 xonadondan iborat majmua yuqori sifatli travertin va ottocento fasad bilan bezatilgan.
+        <h1 className="text-[64px] tracking-[8.32px] text-stone-400 font-['Chocolate_Classical_Sans']">Mirobod Majmuasi</h1>
+        <p className="w-96 mt-4 text-lg text-neutral-900 font-['Chocolate_Classical_Sans']">Toshkent shahri, Mirobod tumani, 
+          Ziyonur MFY, Kuylik-2 mavzesi 26-B uy da joylashgan obyektimiz 2024 yili yashash uchun topshirilgan. Xozirda axoli
+           yashash uchun barcha qulayliklar mavjud. Ayniqsa joylashuv jihatidan juda qulay. Yonida dokon maktab boxcha borligi 
+           aholiga juda yoqadi.
         </p>
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           <div className="relative w-96 h-[600px]">

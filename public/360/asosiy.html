@@ -57,30 +57,42 @@
     wrapper.style.textAlign = "left";
     wrapper.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
     wrapper.style.minWidth = "380px";
-    wrapper.style.maxWidth = "120px";
+    wrapper.style.maxWidth = "300px";
 
     const message = document.createElement("div");
     wrapper.appendChild(message);
 
     const button = document.createElement("div");
-    button.innerText = "Asosiy zalga oʻtish";
+    button.innerText = "Yana...";
     button.className = "custom-link-button";
-    button.onclick = function () {
-      window.location.href = "https://6865509046f23f235e588d13--bm-grouptest.netlify.app/residences";
-    };
     wrapper.appendChild(button);
 
     hotSpotDiv.appendChild(wrapper);
 
     let i = 0;
-    function typeWriter() {
-      if (i < fullText.length) {
+    let isPaused = false;
+    let isExpanded = false;
+    let previewLength = 100; // dastlab 100 harf chiqariladi
+
+    function typeWriter(limit) {
+      if (i < limit) {
         message.innerHTML += fullText.charAt(i);
         i++;
-        setTimeout(typeWriter, 35);
+        setTimeout(() => typeWriter(limit), 30);
       }
     }
-    typeWriter();
+
+    // Dastlab qisqacha matnni yozib chiqamiz
+    typeWriter(previewLength);
+
+    // Tugma bosilganda qolgan qismi yoziladi
+    button.onclick = function () {
+      if (!isExpanded) {
+        isExpanded = true;
+        button.style.display = "none";
+        typeWriter(fullText.length); // qolgan harflarni yozishda davom etadi
+      }
+    };
   }
 
   pannellum.viewer('panorama', {
@@ -89,7 +101,7 @@
     "autoLoad": true,
     "showZoomCtrl": false,
     "showFullscreenCtrl": false,
-    "showControls": false, // pastdagi tugmalarni ham o‘chiradi
+    "showControls": false,
     "hotSpots": [
       {
         "pitch": 10,
@@ -97,8 +109,7 @@
         "type": "custom",
         createTooltipFunc: function(hotSpotDiv) {
           createTextBlock(hotSpotDiv,
-            `Chilonzor tumani, Tersakabad ko’chasida 16 qavatli binolardan tashkil topgan zamonaviy yangi shaharcha barpo etilmoqda...`,
-            "asosiy1.html"
+            `Sergeli tumani, Yangi Shoshtepa Jun ariq ko’chasida 12-16 qavatli binolardan tashkil topgan zamonaviy yangi shaharcha. Bu yerda farovon yashash uchun barcha sharoitlar yaratilgan: maktab, bog‘cha, do‘konlar va transport qulayligi.`
           );
         }
       },
@@ -108,8 +119,7 @@
         "type": "custom",
         createTooltipFunc: function(hotSpotDiv) {
           createTextBlock(hotSpotDiv,
-            `Sergeli tumani, Yangi Shoshtepa Jun ariq ko’chasida 12-16 qavatli binolardan tashkil topgan zamonaviy yangi shaharcha...`,
-            "asosiy2.html"
+            `Go’zal poytaxtimizning tarixiy Shayxontoxur tumani, Samarqand Darvoza ko’chasida qurilayotgan turar-joy majmuamiz. U fransuz uslubidagi fasadga, yashil hududga va rivojlangan infratuzilmaga ega bo‘lib, yuqori sifatli hayot tarzini taklif etadi.`
           );
         }
       },
@@ -119,8 +129,7 @@
         "type": "custom",
         createTooltipFunc: function(hotSpotDiv) {
           createTextBlock(hotSpotDiv,
-            `Go’zal poytaxtimizning tarixiy Shayxontoxur tumani, Samarqand Darvoza ko’chasida qurilayotgan turar-joy majmuamiz...`,
-            "asosiy3.html"
+            `Chilonzor tumani, Tersakabad ko’chasida 16 qavatli binolardan tashkil topgan zamonaviy yangi shaharcha barpo etilmoqda. Loyiha doirasida ko‘plab savdo nuqtalari, bolalar maydonchasi, sport zonasi va keng avtoturargoh mavjud`
           );
         }
       }

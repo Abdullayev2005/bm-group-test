@@ -30,11 +30,11 @@ const navItems = [
   { name: 'Ko‘chmas mulk', href: '/properties' },
   { name: 'Yangiliklar', href: '/news' },
   {
-    name: 'Turar joy majmuiyi',
+    name: 'Turar joy majmuasi',
     subItems: [
       { name: 'Charx Novza', href: '/residences/charx', icon: '🏢' },
-      { name: 'Do‘mbirobot Residence', href: '/residences/dombrovot', icon: '🏘️' },
-      { name: 'Mirobot', href: '/residences/qoyliq', icon: '🏙️' },
+      { name: 'Do‘mbirobod Residence', href: '/residences/dombrovot', icon: '🏘️' },
+      { name: 'Mirobod', href: '/residences/qoyliq', icon: '🏙️' },
       { name: 'Yangi qo‘shnilar', href: '/residences/sergeli', icon: '🏙️' }
     ]
   }

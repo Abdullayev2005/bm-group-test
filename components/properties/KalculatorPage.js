@@ -15,31 +15,28 @@ import {
 export default function KalculatorPage() {
   const [area, setArea] = useState([0, 500]);
   const [price, setPrice] = useState([50, 800]);
-  const [floor, setFloor] = useState([-1, 14]);
+  const [floor, setFloor] = useState([-1, 16]); // ✅ 16 qavatgacha
   const [activeRoom, setActiveRoom] = useState(2);
   const [selectedYear, setSelectedYear] = useState(2025);
 
   const rooms = [1, 2, 3];
   const years = [2025, 2026];
 
- const filteredProperties = propertiesData.filter((property) => {
-  const totalPrice = parseInt(property.price.replace(/\s/g, '').replace('UZS', '')) / 1_000_000;
-  const areaValue = parseFloat(property.size.match(/\d+(\.\d+)?/)[0]);
-  const floorValue = parseInt(property.floors.split('/')[0]);
-  const yearValue = parseInt(property.date.split('/')[1]);
-  const roomCount = parseInt(property.title.match(/\d+/)[0]);
+  const filteredProperties = propertiesData.filter((property) => {
+    const totalPrice = parseInt(property.price.replace(/\s/g, '').replace('UZS', '')) / 1_000_000;
+    const areaValue = parseFloat(property.size.match(/\d+(\.\d+)?/)[0]);
+    const floorValue = parseInt(property.floors.split('/')[0]);
+    const yearValue = parseInt(property.date.split('/')[1]);
+    const roomCount = parseInt(property.title.match(/\d+/)[0]);
 
-  return (
-    roomCount === activeRoom &&
-    areaValue >= area[0] && areaValue <= area[1] &&
-    totalPrice >= price[0] && totalPrice <= price[1] &&
-    floorValue >= floor[0] && floorValue <= floor[1] &&
-    yearValue === selectedYear
-  );
-});
-
-
-
+    return (
+      roomCount === activeRoom &&
+      areaValue >= area[0] && areaValue <= area[1] &&
+      totalPrice >= price[0] && totalPrice <= price[1] &&
+      floorValue >= floor[0] && floorValue <= floor[1] &&
+      yearValue === selectedYear
+    );
+  });
 
   return (
     <section className="pt-40 max-w-7xl mx-auto px-6 py-12">
@@ -150,7 +147,7 @@ export default function KalculatorPage() {
               <Slider
                 range
                 min={-1}
-                max={14}
+                max={16} // ✅ 16 qavat
                 value={floor}
                 onChange={(value) => setFloor(value)}
                 trackStyle={[{ backgroundColor: '#0B2273' }]}
@@ -163,7 +160,7 @@ export default function KalculatorPage() {
           </div>
         </div>
 
-        {/* Filtrlangan obyektlar (PropertiesGrid) */}
+        {/* Filtrlangan obyektlar */}
         <section className="max-w-7xl mx-auto px-0 pt-12">
           <h2 className="text-xl font-semibold text-[#1E2A64] mb-4">Sizga moslari</h2>
 
@@ -174,7 +171,7 @@ export default function KalculatorPage() {
                 href={item.link}
                 className="border bg-white border-[#CBD5E1] rounded-lg overflow-hidden hover:shadow-md transition"
               >
-                <div className=" h-48 relative">
+                <div className="h-48 relative">
                   <Image
                     src={item.img}
                     alt={item.title}

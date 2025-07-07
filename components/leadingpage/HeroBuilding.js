@@ -5,20 +5,20 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const buildings = [
-  { id: 1, name: 'A Bino', top: '37.3%', left: '12.7%', img: '/buil_image/tayyor 1.png', width: 400, height: 400 },
-  { id: 2, name: 'B Bino', top: '58.8%', left: '23.2%', img: '/buil_image/tayyor 2.png', width: 450, height: 450 },
-  { id: 3, name: 'C Bino', top: '64.5%', left: '44.6%', img: '/buil_image/tayyor 3.png', width: 500, height: 500 },
-  { id: 4, name: 'D Bino', top: '65.5%', left: '67%', img: '/buil_image/tayyor 4.png', width: 530, height: 530 },
-  { id: 5, name: 'E Bino', top: '70%', left: '87.8%', img: '/buil_image/tayyor 5.png', width: 570, height: 570 },
+  { id: 1, name: 'A Bino', top: '40.3%', left: '12.7%', img: '/buil_image/tayyor 1.png', width: '40.8%', height: '40.8%' },
+  { id: 2, name: 'B Bino', top: '57%', left: '23.6%', img: '/buil_image/tayyor 2.png', width: '46.4%', height: '46.4%' },
+  { id: 3, name: 'C Bino', top: '63.2%', left: '44.6%', img: '/buil_image/tayyor 3.png', width: '55.0%', height: '55.0%' },
+  { id: 4, name: 'D Bino', top: '62.7%', left: '67%', img: '/buil_image/tayyor 4.png', width: '55%', height: '55%' },
+  { id: 5, name: 'E Bino', top: '65%', left: '87.8%', img: '/buil_image/tayyor 5.png', width: '55%', height: '55%' },
 ];
 
 const doors = [
-  { id: 1, name: 'Eshik 1', img: '/buil_image/eshik 1.png', top: '46%', left: '16.5%', width: 430, height: 1100 },
-  { id: 2, name: 'Eshik 2', img: '/buil_image/eshik 2.png', top: '83%', left: '34.5%', width: 280, height: 850 },
-  { id: 3, name: 'Eshik 3', img: '/buil_image/eshik 3.png', top: '70%', left: '39%', width: 190, height: 800 },
-  { id: 4, name: 'Eshik 4', img: '/buil_image/eshik 4.png', top: '63.5%', left: '47%', width: 225, height: 1050 },
-  { id: 5, name: 'Eshik 5', img: '/buil_image/eshik 5.png', top: '74%', left: '61%', width: 250, height: 1100 },
-  { id: 6, name: 'Eshik 6', img: '/buil_image/eshik 6.png', top: '81.5%', left: '59.8%', width: 280, height: 850 },
+  { id: 1, name: 'Eshik 1', img: '/buil_image/eshik_1.png', top: '64.5%', left: '20%', width: '40%', height: '84.0%' },
+  { id: 2, name: 'Eshik 2', img: '/buil_image/eshik_2.png', top: '65%', left: '29.5%', width: '30.3%', height: '65%' },
+  { id: 3, name: 'Eshik 3', img: '/buil_image/eshik_3.png', top: '58%', left: '34.2%', width: '8.6%', height: '46.3%' },
+  { id: 4, name: 'Eshik 4', img: '/buil_image/eshik_4.png', top: '55.3%', left: '43.6%', width: '10.9%', height: '50.9%' },
+  { id: 5, name: 'Eshik 5', img: '/buil_image/eshik_5.png', top: '58.5%', left: '53%', width: '7.5%', height: '74.0%' },
+  { id: 6, name: 'Eshik 6', img: '/buil_image/eshik_6.png', top: '62.9%', left: '67.5%', width: '16.9%', height: '60.7%' },
 ];
 
 export default function HeroBuilding() {
@@ -30,17 +30,22 @@ export default function HeroBuilding() {
     router.push(`/property-detail/${id}`);
   };
 
+  const handleBuildingClick = (id) => {
+    setActiveBuilding(id);
+    setActiveDoor(null);
+  };
+
   return (
-    <div className="relative w-full h-[800px] overflow-hidden">
+    <div className="relative w-full aspect-[16/9] overflow-hidden">
       <Image src="/buil_image/tour.jpg" alt="Panorama" fill className="object-cover" />
 
       {buildings.map(({ id, top, left, name, img, width, height }) => (
         <div
           key={id}
           title={name}
-          onClick={() => setActiveBuilding(id)}
+          onClick={() => handleBuildingClick(id)}
           className="absolute cursor-pointer group hover:scale-105 transition-transform duration-300"
-          style={{ top, left, width: `${width}px`, height: `${height}px`, transform: 'translate(-50%, -50%)' }}
+          style={{ top, left, width, height, transform: 'translate(-50%, -50%)' }}
         >
           <Image
             src={img}
@@ -49,7 +54,7 @@ export default function HeroBuilding() {
             className="object-contain z-10 relative mix-blend-multiply group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.8)]"
           />
           <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 text-white text-xs bg-blue-600 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {name} haqida malumot
+            {name} haqida ma'lumot
           </div>
         </div>
       ))}
@@ -65,9 +70,9 @@ export default function HeroBuilding() {
             </button>
           </div>
           <p className="mt-2 text-gray-700">
-            Bu yerda {buildings.find(b => b.id === activeBuilding)?.name} haqida batafsil malumot bo‘ladi.
+            Bu yerda {buildings.find(b => b.id === activeBuilding)?.name} haqida batafsil ma'lumot bo‘ladi.
           </p>
-          <div className="mt-4 relative w-full h-[600px] bg-gray-100 rounded shadow-inner overflow-hidden">
+          <div className="mt-4 relative w-full aspect-[16/9] bg-gray-100 rounded shadow-inner overflow-hidden">
             <Image
               src="/buil_image/eshik_section.png"
               alt="Eshiklar bilan koridor"
@@ -79,7 +84,7 @@ export default function HeroBuilding() {
                 key={id}
                 onClick={() => handleDoorClick(id)}
                 className="absolute cursor-pointer group"
-                style={{ top, left, width: `${width}px`, height: `${height}px`, transform: 'translate(-50%, -50%)' }}
+                style={{ top, left, width, height, transform: 'translate(-50%, -50%)' }}
               >
                 <Image
                   src={img}

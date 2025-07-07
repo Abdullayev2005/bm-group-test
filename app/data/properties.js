@@ -7,7 +7,7 @@ const propertiesData = [
     date: '4/2026',
     floors: '3/14',
     size: '61.2 m²',
-    img: '/properties/floor1.png',
+    img: '/properties/Hona_1.png',
     gallery: ['/properties/floor1.png', '/properties/floor2.png', '/properties/floor3.png'],
     link: '/property-detail/1',
     rooms: [
@@ -28,7 +28,7 @@ const propertiesData = [
     floors: '5/14',
     size: '85.5 m²',
     img: '/properties/floor2.png',
-    gallery: ['/properties/floor2.png'],
+    gallery: ['/properties/Hona_2.png'],
     link: '/property-detail/2',
     rooms: [
       { name: 'Yotoqxona1', size: '14.2 m²' },
@@ -46,7 +46,7 @@ const propertiesData = [
     date: '12/2025',
     floors: '2/9',
     size: '41.0 m²',
-    img: '/properties/floor3.png',
+    img: '/properties/Hona_3.png',
     gallery: ['/properties/floor3.png'],
     link: '/property-detail/3',
     rooms: [
@@ -64,7 +64,7 @@ const propertiesData = [
     floors: '8/16',
     size: '59.2 m²',
     img: '/properties/floor4.png',
-    gallery: ['/properties/floor4.png'],
+    gallery: ['/properties/Hona_4.png'],
     link: '/property-detail/4',
     rooms: [
       { name: 'Yotoqxona1', size: '16.5 m²' },
@@ -82,7 +82,7 @@ const propertiesData = [
     floors: '12/20',
     size: '103.0 m²',
     img: '/properties/floor5.png',
-    gallery: ['/properties/floor5.png'],
+    gallery: ['/properties/Hona_5.png'],
     link: '/property-detail/5',
     rooms: [
       { name: 'Yotoqxona1', size: '18 m²' },
@@ -101,7 +101,7 @@ const propertiesData = [
     floors: '4/12',
     size: '38.7 m²',
     img: '/properties/floor6.png',
-    gallery: ['/properties/floor6.png'],
+    gallery: ['/properties/Hona_4.png'],
     link: '/property-detail/6',
     rooms: [
       { name: 'Yotoqxona', size: '18.7 m²' },

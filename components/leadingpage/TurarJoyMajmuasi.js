@@ -53,12 +53,12 @@ export default function ResidentialComplexes() {
               {slides.map((item, index) => (
                 <div key={index} className="w-1/2 px-2 flex-shrink-0">
                   <div className="relative w-[290px] h-[250px] rounded-xl overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                    />
+                    <img
+                       src={item.image}
+                       alt={item.title}
+                       className="w-full h-64 object-cover rounded-lg"
+/>
+
                     <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white p-3 text-sm">
                       <strong>{item.title}</strong><br />
                       {item.subtitle}
